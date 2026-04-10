@@ -1,135 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Use | Sharda Education Park Consultancy Pvt. Ltd.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Terms of Use for Sharda Education Park Consultancy Pvt. Ltd.">
+  <title>Terms of Use | Sharda Education Park</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;500;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-fixed": "#efdbff",
+            "surface-container-low": "#151c24",
+            "surface-bright": "#333a43",
+            "on-secondary-container": "#d1a6ff",
+            "surface-container": "#192028",
+            "on-primary-fixed": "#181e00",
+            "on-tertiary": "#003829",
+            "outline-variant": "#454836",
+            "tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#00513c",
+            "background": "#0d141c",
+            "surface": "#0d141c",
+            "secondary-fixed-dim": "#dbb8ff",
+            "on-primary": "#2b3400",
+            "surface-container-high": "#242b33",
+            "primary-fixed": "#d3ef57",
+            "surface-dim": "#0d141c",
+            "secondary": "#dbb8ff",
+            "on-primary-fixed-variant": "#3f4c00",
+            "tertiary-fixed": "#74facb",
+            "on-secondary-fixed-variant": "#60249e",
+            "on-tertiary-fixed": "#002116",
+            "on-background": "#dce3ee",
+            "error-container": "#93000a",
+            "on-surface-variant": "#c6c8b0",
+            "error": "#ffb4ab",
+            "inverse-primary": "#556500",
+            "tertiary-fixed-dim": "#54ddb0",
+            "on-surface": "#dce3ee",
+            "on-error-container": "#ffdad6",
+            "tertiary-container": "#74facb",
+            "secondary-container": "#6327a1",
+            "on-tertiary-container": "#007256",
+            "primary": "#ffffff",
+            "primary-container": "#d3ef57",
+            "on-primary-container": "#5a6b00",
+            "on-error": "#690005",
+            "outline": "#90937d",
+            "surface-tint": "#b7d23d",
+            "primary-fixed-dim": "#b7d23d",
+            "surface-container-lowest": "#080f16",
+            "surface-container-highest": "#2e353e",
+            "on-secondary": "#470083",
+            "inverse-surface": "#dce3ee",
+            "surface-variant": "#2e353e",
+            "on-secondary-fixed": "#2b0052",
+            "inverse-on-surface": "#2a313a"
+          },
+          borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+          fontFamily: { headline: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Space Grotesk"] }
+        }
+      }
+    };
+  </script>
   <style>
-    .policy-content {
-      padding: 5rem 5%;
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #333;
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
     }
 
-    .policy-header {
-      background: linear-gradient(140deg, #1a0010 0%, #2d0040 100%);
-      padding: 6rem 5% 4rem;
-      text-align: center;
-      color: #fff;
+    .glow-mesh {
+      background: radial-gradient(circle at 50% 50%, rgba(226, 255, 101, 0.05) 0%, transparent 50%), radial-gradient(circle at 10% 20%, rgba(219, 184, 255, 0.08) 0%, transparent 40%);
     }
 
-    .policy-header h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 1rem;
+    .nav-btn {
+      background: #E2FF65;
+      color: #181e00;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
     }
 
-    .policy-content h2 {
-      margin: 2.5rem 0 1rem;
-      color: var(--purple);
-      font-size: 1.5rem;
+    .nav-btn:hover {
+      transform: scale(0.95);
+      opacity: 0.9;
     }
 
-    .policy-content p {
-      margin-bottom: 1.2rem;
+    #mobileMenu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background: #0d141c;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .policy-content ul {
-      margin-bottom: 1.5rem;
-      padding-left: 1.5rem;
+    #mobileMenu.open {
+      right: 0;
     }
 
-    .policy-content ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
+    .hamburger {
+      width: 30px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+      z-index: 110;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
     }
   </style>
 </head>
 
-<body>
+<body
+  class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
 
-  <!-- NAVBAR -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="index.html#home" class="nav-logo">
-        <div class="logo-text">
-          <span class="logo-sharda">SHARDA</span><span class="logo-edu">EDUCATION</span>
-          <span class="logo-sub">Park Consultancy Pvt. Ltd.</span>
-        </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#dest">Destinations</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu">
+    <a href="index.html#home" class="text-3xl font-headline font-bold" onclick="closeMobile()">Home</a>
+    <a href="index.html#dest" class="text-3xl font-headline font-bold" onclick="closeMobile()">Destinations</a>
+    <a href="index.html#services" class="text-3xl font-headline font-bold" onclick="closeMobile()">Services</a>
+    <a href="index.html#about" class="text-3xl font-headline font-bold" onclick="closeMobile()">About</a>
+    <a href="index.html#contact" class="text-3xl font-headline font-bold" onclick="closeMobile()">Contact</a>
+    <a href="tel:9858045922" class="nav-btn mt-8">Call Now</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav
+    class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 h-16 bg-surface/60 backdrop-blur-xl rounded-sm mt-6 mx-auto max-w-7xl shadow-2xl">
+    <a href="index.html#home" class="text-xl font-bold tracking-[0.04em] text-white">SHARDA<span class="text-[#E2FF65]">
+        EDUCATION
+      </span> <span class="text-xl font-bold tracking-[0.04em] text-white">PARK</span></a>
+    <div class="hidden md:flex items-center space-x-10 font-headline tracking-[0.04em] font-bold uppercase text-[10px]">
+      <a class="text-white/70 hover:text-[#E2FF65] transition-colors" href="index.html#home">Home</a>
+      <a class="text-white/70 hover:text-[#E2FF65] transition-colors" href="index.html#dest">Destinations</a>
+      <a class="text-white/70 hover:text-[#E2FF65] transition-colors" href="index.html#services">Services</a>
+      <a class="text-white/70 hover:text-[#E2FF65] transition-colors" href="index.html#about">About</a>
+      <a class="text-white/70 hover:text-[#E2FF65] transition-colors" href="index.html#contact">Contact</a>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="tel:9858045922" class="nav-btn hidden md:block">985-804-5922</a>
+      <div class="hamburger md:hidden" id="hamburger">
+        <span></span><span></span><span></span>
       </div>
-      <a href="tel:9858045922" class="btn-nav">985-804-5922</a>
     </div>
   </nav>
 
-  <header class="policy-header">
-    <div class="container">
-      <h1>Terms of Use</h1>
-      <p>Last Updated: March 28, 2026</p>
-    </div>
-  </header>
+  <main class="relative pt-40">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E2FF65]/5 blur-[120px] rounded-full -z-10"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#BA80FB]/5 blur-[120px] rounded-full -z-10"></div>
 
-  <main class="policy-content">
-    <div class="container">
-      <h2>1. Introduction</h2>
-      <p>Welcome to Sharda Education Park Consultancy Pvt. Ltd. By accessing this website, you agree to comply with and be bound by the following terms and conditions of use, which govern Sharda Education's relationship with you in relation to this website.</p>
+    <div class="max-w-4xl mx-auto px-8">
+      <h1 class="font-headline text-5xl md:text-6xl font-black text-white mb-4 tracking-tighter">Terms of Use</h1>
+      <p class="font-label text-xs tracking-widest uppercase text-[#E2FF65] mb-16 opacity-80">Last Updated: March 28,
+        2026</p>
 
-      <h2>2. Use of Site</h2>
-      <p>The content of the pages of this website is for your general information and use only. It is subject to change without notice.</p>
-      <ul>
-        <li>Your use of any information or materials on this website is entirely at your own risk.</li>
-        <li>Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, or suitability of the information found on this website.</li>
-        <li>This website contains material which is owned by or licensed to us. Reproduction is prohibited other than in accordance with the copyright notice.</li>
-      </ul>
+      <div class="space-y-12 text-on-surface-variant leading-relaxed font-body text-lg">
+        <section>
+          <h2 class="text-white font-headline text-2xl font-bold mb-4 flex items-center gap-3">
+            <span class="text-[#E2FF65] text-sm font-label">01.</span> Introduction
+          </h2>
+          <p>Welcome to Sharda Education Park Consultancy Pvt. Ltd. By accessing this website, you agree to comply with
+            and be bound by the following terms and conditions of use, which govern Sharda Education's relationship with
+            you in relation to this website.</p>
+        </section>
 
-      <h2>3. Academic & Consultancy Disclaimer</h2>
-      <p>Sharda Education Park Consultancy provides guidance and assistance for study abroad applications. However, we do not guarantee admission to any institution or the approval of any visa. These decisions are solely at the discretion of the respective universities and embassies.</p>
+        <section>
+          <h2 class="text-white font-headline text-2xl font-bold mb-4 flex items-center gap-3">
+            <span class="text-[#E2FF65] text-sm font-label">02.</span> Use of Site
+          </h2>
+          <p>The content of the pages of this website is for your general information and use only. It is subject to
+            change without notice.</p>
+          <ul class="mt-4 space-y-3">
+            <li class="flex gap-4"><span
+                class="text-[#E2FF65] material-symbols-outlined text-sm pt-1">arrow_forward</span> Your use of any
+              information or materials on this website is entirely at your own risk.</li>
+            <li class="flex gap-4"><span
+                class="text-[#E2FF65] material-symbols-outlined text-sm pt-1">arrow_forward</span> Neither we nor any
+              third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, or
+              suitability of the information found on this website.</li>
+            <li class="flex gap-4"><span
+                class="text-[#E2FF65] material-symbols-outlined text-sm pt-1">arrow_forward</span> This website contains
+              material which is owned by or licensed to us. Reproduction is prohibited other than in accordance with the
+              copyright notice.</li>
+          </ul>
+        </section>
 
-      <h2>4. User Conduct</h2>
-      <p>You must not use this website in any way that causes, or may cause, damage to the website or impairment of the availability or accessibility of the website.</p>
+        <section>
+          <h2 class="text-white font-headline text-2xl font-bold mb-4 flex items-center gap-3">
+            <span class="text-[#E2FF65] text-sm font-label">03.</span> Academic & Consultancy Disclaimer
+          </h2>
+          <p>Sharda Education Park Consultancy provides guidance and assistance for study abroad applications. However,
+            we do not guarantee admission to any institution or the approval of any visa. These decisions are solely at
+            the discretion of the respective universities and embassies.</p>
+        </section>
 
-      <h2>5. Governing Law</h2>
-      <p>Your use of this website and any dispute arising out of such use of the website is subject to the laws of Nepal.</p>
+        <section>
+          <h2 class="text-white font-headline text-2xl font-bold mb-4 flex items-center gap-3">
+            <span class="text-[#E2FF65] text-sm font-label">04.</span> User Conduct
+          </h2>
+          <p>You must not use this website in any way that causes, or may cause, damage to the website or impairment of
+            the availability or accessibility of the website.</p>
+        </section>
+
+        <section>
+          <h2 class="text-white font-headline text-2xl font-bold mb-4 flex items-center gap-3">
+            <span class="text-[#E2FF65] text-sm font-label">05.</span> Governing Law
+          </h2>
+          <p>Your use of this website and any dispute arising out of such use of the website is subject to the laws of
+            Nepal.</p>
+        </section>
+      </div>
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="f-brand">
-        <span class="logo-sharda" style="color:rgba(255,255,255,.9)">SHARDA</span><span class="logo-edu"
-          style="color:rgba(200,160,255,.9)">EDUCATION</span>
-        <p>Pioneer & Leading Study Abroad Consultancy in Kohalpur, Banke. 15 Years of Experience.</p>
+  <!-- Footer -->
+  <footer
+    class="w-full px-8 md:px-12 flex flex-col items-center border-t border-outline-variant/10 bg-[#0d141c] mt-32 pt-24 pb-12">
+    <div class="max-w-7xl w-full flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+      <div class="max-w-xs">
+        <div class="text-white font-black tracking-tighter text-2xl mb-6">SHARDA EDUCATION PARK<span
+            class="text-[#E2FF65]">.</span>
+        </div>
+        <p class="text-on-surface-variant text-[10px] leading-loose font-label uppercase tracking-widest opacity-60">
+          Architecting global education futures through strategic excellence since 2016.
+        </p>
       </div>
-      <div class="f-links">
-        <h5>Quick Links</h5>
-        <a href="index.html#dest">Destinations</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#about">About Us</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
-      <div class="f-links">
-        <h5>Legal</h5>
-        <a href="terms.html">Terms of Use</a>
-        <a href="privacy.html">Privacy Policy</a>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-16">
+        <div>
+          <h6
+            class="font-label text-[10px] tracking-widest uppercase text-white mb-8 border-b border-[#E2FF65]/30 pb-2 inline-block">
+            Ecosystem</h6>
+          <ul class="space-y-4 font-label text-[10px] tracking-widest uppercase text-white/40">
+            <li><a class="hover:text-[#E2FF65] transition-all" href="index.html#dest">Destinations</a></li>
+            <li><a class="hover:text-[#E2FF65] transition-all" href="index.html#services">Services</a></li>
+            <li><a class="hover:text-[#E2FF65] transition-all" href="index.html#about">Why Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6
+            class="font-label text-[10px] tracking-widest uppercase text-white mb-8 border-b border-[#E2FF65]/30 pb-2 inline-block">
+            Support</h6>
+          <ul class="space-y-4 font-label text-[10px] tracking-widest uppercase text-white/40">
+            <li><a class="hover:text-[#E2FF65] transition-all" href="index.html#contact">Contact</a></li>
+            <li><a class="hover:text-[#E2FF65] transition-all" href="privacy.html">Privacy</a></li>
+            <li><a class="hover:text-[#E2FF65] transition-all" href="terms.html">Terms</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="f-bottom">
-      <p>Copyright &copy; 2026 Sharda Education Park Consultancy Pvt. Ltd. All rights reserved.</p>
-      <div class="fdev">Designed & Developed by <a href="">Keshav Poudel</a></div>
+    <div class="w-full flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/5 pt-8">
+      <div
+        class="font-['Space_Grotesk'] text-[8px] md:text-[10px] tracking-widest uppercase text-white/30 mb-4 md:mb-0">
+        © 2026 SHARDA EDUCATION PARK CONSULTANCY PVT. LTD. ALL RIGHTS RESERVED.
+      </div>
+      <div class="flex items-center gap-2 font-label text-[10px] tracking-widest uppercase text-white/50">
+        Designed by <span class="text-white font-bold text-[10px]">Keshav Poudel</span>
+      </div>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobile() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+    AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+  </script>
 </body>
 
 </html>
